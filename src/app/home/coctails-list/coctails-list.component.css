@@ -1,0 +1,9 @@
+mat-card{
+    margin:3px 0px;
+}
+
+.drink-name{
+    color: indianred;
+    font-size: 32px;
+    font-weight: 500;
+}

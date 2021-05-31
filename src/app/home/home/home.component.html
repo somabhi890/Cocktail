@@ -1,0 +1,43 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Cocktail Splash 🍹</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+
+            <mat-card style="margin: 0rem 1rem;">
+                <div class="row">
+                    <div class="col-sm">
+                        <mat-form-field>
+                            <mat-label>Category</mat-label>
+                            <mat-select #categorySelector (selectionChange)="filterByCategory(categorySelector.value)">
+                              <mat-option *ngFor="let category of categoriesList" [value]="category.strCategory">
+                                {{category.strCategory}}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </div>
+                    <div class="col-sm">
+                        <mat-form-field>
+                            <mat-label>Ingredients</mat-label>
+                            <mat-select #ingredientSelector (selectionChange)="filterByIngredients(ingredientSelector.value)">
+                              <mat-option *ngFor="let ing of ingredientsList" [value]="ing.strIngredient1">
+                                {{ing.strIngredient1}}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </div>                    
+                    <div class="col-sm">
+                     
+                      <mat-form-field style="width: 90%;">
+                        <input matInput placeholder="Search Cocktail Name..."  [(ngModel)]="searchText" [ngModelOptions]="{'stanalone':true}">
+                    </mat-form-field>
+                        <button mat-raised-button style="background-color: #ce1dd4;color: white;" (click)="filterByName()"> Search</button>
+                      
+                    </div>
+                </div>
+            </mat-card>
+
+
+
+<app-coctails-list></app-coctails-list>

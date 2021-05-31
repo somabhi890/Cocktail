@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <mat-card *ngFor="let cocktail of cockctailsList">
+                <div class="row">
+                    <div class="col-sm">
+                        <img [src]="cocktail?.strDrinkThumb" style="height: 80px;width:80px">
+                    </div>
+                    <div class="col-sm drink-name">
+                        <span>{{cocktail?.strDrink}}</span>
+                    </div>
+                    <div class="col-sm">
+                        <span>Category:  {{cocktail?.strCategory}}</span>
+                    </div>
+                    <div class="col-sm">
+                        <span>Alchoholic: </span><br/>
+                        <span [style.color]="(cocktail?.strAlcoholic == 'Alcoholic')?'red':'green'">{{cocktail?.strAlcoholic}}</span>
+                    </div>
+                    <div class="col-sm">
+                        <span>Instructions: </span><br/>
+                        <span>{{cocktail?.strInstructions}}</span>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
